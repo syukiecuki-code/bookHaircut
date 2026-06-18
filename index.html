@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Haircut</title>
+    <title>Booking Haircut</title>
     <style>
         body{
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,75 +12,177 @@
             justify-content: center;
             align-items: center;
             margin: 0;
+            padding: 40px 20px;
             background-color: #0f172a;
-            min-height: 100vh;
         }
-         div {
-            margin: 20px;
-            background-color: #334155;
-            height: auto;
-            width: auto;
-            border-radius: 50px;
+        .main  {
+            margin: 0px;
+            background-color: #1e293b;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 24px;
             padding: 40px;
-            border: 0px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
         }
-        input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #333;
-            background-color: #2a2a2a;
-            color: white;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .service-container{
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
         }
-        .form-group{
-            box-shadow: 0 0 0 0;
+        
+        .card{
+            background-color: #334155;
+            margin: 0;
+            border-radius: 16px;
+            padding: 24px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 240px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        button.select-btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+        }
+        button.select-btn:hover{
+            background-color: #7dd3fc;
+        }
+        p{
+            margin: 0 0 16px 0;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        h1{
             margin: 0px;
-            padding: 10px;
+            padding-bottom: 20px;
+            text-align: center;
         }
-        label{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .card h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.4rem;
+            color: #fff;
         }
-        button{
-            padding: 10px;
-            margin-top:20px;
-            background-color: #89ade4;
-            border-radius: 6px;
-            width: 100%;
-            font-weight: 400;
+        .card h3{
+            margin: 0 0 20px 0;
+            font-size: 1.6rem;
+            color: #38bdf8;
         }
 
-        button:hover{
-            background-color: #adc1e0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, .3);
-            
+        /* --- Google Script Form Layout --- */
+        .form-section {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #94a3b8;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #fff;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+        .submit-btn {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #16a34a;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Book an Appointment</h1>
-        <form action="https://script.google.com/macros/s/AKfycbzT7di4IxRaYaGm7VoMFgpKHJYEa7SG9TAZdJewZl4mRcmHJ-rTuWecgBReye5vR1yHWw/exec" method="POST">
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="customer_name" required>
+    <div class="main">
+        <h1>Booking for Services</h1>
+        
+        <div class="service-container">
+            <div class="card">
+                <h2>Haircut</h2>
+                <p>30 min</p>
+                <h3><b>RM20</b></h3>
+                <button type="button" class="select-btn" onclick="document.getElementById('chosenService').value = 'Haircut'; alert('Selected: Haircut! Please fill your details below.');">Book</button>
             </div>
-            <div class="form-group">
-                <label for="phone">Number Phone:</label>
-                <input type="text" id="phone" name="no_phone" required>
+            <div class="card">
+                <h2>Hairwash</h2>
+                <p>10 min</p>
+                <h3><b>RM10</b></h3>
+                <button type="button" class="select-btn" onclick="document.getElementById('chosenService').value = 'Hairwash'; alert('Selected: Hairwash! Please fill your details below.');">Book</button>
             </div>
-            <div class="form-group">
-                <label for="date">Appointment Date:</label>
-                <input type="datetime-local" id="date" name="appointment_date" required>
+            <div class="card">
+                <h2>Keratin</h2>
+                <p>90 min</p>
+                <h3><b>RM65</b></h3>
+                <button type="button" class="select-btn" onclick="document.getElementById('chosenService').value = 'Keratin'; alert('Selected: Keratin! Please fill your details below.');">Book</button>
             </div>
-            <button type="submit" onclick="option">Confirm Booking</button>
-            
-        </form>
+        </div>
+
+        <div class="form-section">
+            <form action="https://script.google.com/macros/s/AKfycbz7dR9a-AoYA8uK5e7v2HC_O3szfMUsmxYdH8hLHwVynEPXZ59tC2PNcUcgJQYOXXS5dg/exec" method="POST">
+                
+                <div class="form-group">
+                    <label for="chosenService">Selected Package</label>
+                    <input type="text" id="chosenService" name="service" readonly placeholder="Click a 'Book' button above" style="background-color: #1e293b; color: #38bdf8; font-weight: bold; border-style: dashed;" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Your Name</label>
+                    <input type="text" id="customer_name" name="customer_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="no_phone" name="no_phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date</label>
+                    <input type="date" id="appointment_date" name="appointment_date" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Appointment</button>
+            </form>
+        </div>
     </div>
 </body>
-<script>
-</script>
-
 </html>
