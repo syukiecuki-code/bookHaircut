@@ -2,29 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Haircut</title>
     <style>
         body{
-            font-family:sans-serif;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0;
-            background-color: #112E81;
+            background-color: #0f172a;
+            min-height: 100vh;
         }
          div {
             margin: 20px;
-            background-color: #366ab8;
+            background-color: #334155;
             height: auto;
             width: auto;
             border-radius: 50px;
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-bottom:30px;
-            padding-top:10px ;
+            padding: 40px;
             border: 0px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, .5);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
         }
         input {
             width: 100%;
@@ -34,7 +32,7 @@
             background-color: #2a2a2a;
             color: white;
             box-sizing: border-box;
-            font-family: arial;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .form-group{
             box-shadow: 0 0 0 0;
@@ -42,20 +40,27 @@
             padding: 10px;
         }
         label{
-            font-family: arial;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         button{
+            padding: 10px;
+            margin-top:20px;
             background-color: #89ade4;
+            border-radius: 6px;
+            width: 100%;
+            font-weight: 400;
         }
 
         button:hover{
             background-color: #adc1e0;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, .3);
+            
         }
     </style>
 </head>
 <body>
     <div>
+        <h1>Book an Appointment</h1>
         <form action="https://script.google.com/macros/s/AKfycbzT7di4IxRaYaGm7VoMFgpKHJYEa7SG9TAZdJewZl4mRcmHJ-rTuWecgBReye5vR1yHWw/exec" method="POST">
             <div class="form-group">
                 <label for="name">Your Name:</label>
@@ -69,7 +74,7 @@
                 <label for="date">Appointment Date:</label>
                 <input type="datetime-local" id="date" name="appointment_date" required>
             </div>
-            <button type="submit" onclick="option">Book Appointment</button>
+            <button type="submit" onclick="option">Confirm Booking</button>
             
         </form>
     </div>
